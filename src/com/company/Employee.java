@@ -21,7 +21,7 @@ public class Employee {
         this.domain= domain;
         this.degree= degree;
     }
-
+//dghdfg
     public Employee(Employee employee){
         fullName=employee.fullName;
         birthDate=employee.birthDate;
