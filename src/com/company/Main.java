@@ -59,6 +59,8 @@ public class Main {
         Job job2 =new Job("Job2","Job Tel", 10000,400,200,h2);
         Job job3 =new Job("Job3","Job Tel", 10000,400,200,h3);
 
+        //Phase1 Ready
+
 
         jobarr1.add(job1);
         jobarr2.add(job2);
