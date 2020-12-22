@@ -18,6 +18,8 @@ public class Department {
         this.description = description;
     }
 
+
+
     public int PaymentExpences() {
         int sum=0;
         for(Employee employee : employees){
@@ -26,7 +28,7 @@ public class Department {
         sum+= master.MonthIncomeEmp();
         return sum;
     }
-    public void MaxPureInc(){
+    public Job MaxPureInc(){
         double max=0;
         int found=0;
         for(int i=0; i<job.size(); i++)
@@ -34,11 +36,23 @@ public class Department {
             max=job.get(i).PureIncome();
             found=i;
         }
-        System.out.println(job.get(found).toString());
+       return job.get(found);
     }
 
-    public void ChangeDepartment(Department destinationdepart,Employee employee)  { }
+    @Override
+    public String toString() {
+        return "Department{" +
+                "master=" + master +
+                ", employees=" + employees +
+                ", job=" + job +
+                ", depName='" + depName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    public void ChangeDepartment(Department destinationdepart, Employee employee)  { }
 
     public void setMaster(Master master){this.master=master;}
 
+    public ArrayList<Employee> getEmployees() { return employees; }
 }

@@ -14,4 +14,6 @@ public class Master extends Employee {
       this.startTime=startTime;
    }
 
+
+
 }

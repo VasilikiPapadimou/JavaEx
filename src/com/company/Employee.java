@@ -1,5 +1,7 @@
 package com.company;
 
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Employee {
@@ -39,13 +41,13 @@ public class Employee {
         for(int i =0; i<degrees.length; i++)
             if(degree.equals(degrees[i]))
                 price+=80*i;
-        Date thisYear = new Date();
-        int year = thisYear.getYear();
-        int threeyears = (year-yearHire)/3;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
+        Date date = new Date();
+        int threeyears= Integer.parseInt(formatter.format(date))/yearHire;
         price+=threeyears*40;
 
-        Job j=new Job();
-        j.isEmployed(this);
+        //Job j=new Job();
+      // j.isEmployed(this);
 
         if(this instanceof Master){
             price+=400;
@@ -61,5 +63,17 @@ public class Employee {
 
     public void setDegree(String degree) { this.degree = degree; }
 
-
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "degrees=" + Arrays.toString(degrees) +
+                ", fullName='" + fullName + '\'' +
+                ", birthDate=" + birthDate +
+                ", isMarried=" + isMarried +
+                ", noChild=" + noChild +
+                ", yearHire=" + yearHire +
+                ", domain='" + domain + '\'' +
+                ", degree='" + degree + '\'' +
+                '}';
+    }
 }

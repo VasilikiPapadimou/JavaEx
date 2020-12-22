@@ -1,5 +1,6 @@
 package com.company;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -13,6 +14,15 @@ public class Job {
     private double funcOut; //leitoyrgika exoda
     private HashMap<Employee, Date[]> jobEmp; // gia hme/nia enarxis, lixis ergou
 
+    public Job(String jobName, String description, double income, double outcome, double funcOut, HashMap<Employee, Date[]> jobEmp) {
+        this.jobName = jobName;
+        this.description = description;
+        this.income = income;
+        this.outcome = outcome;
+        this.funcOut = funcOut;
+        this.jobEmp = jobEmp;
+    }
+
     public boolean isEmployed(Employee employee){
         for( Employee e: jobEmp.keySet()){
             if(employee==e)
@@ -20,13 +30,18 @@ public class Job {
         }
            return false;
     }
+
+    public HashMap<Employee, Date[]> getJobEmp() {
+        return jobEmp;
+    }
+    SimpleDateFormat formatter = new SimpleDateFormat("MM");
     public int JobExpenses() {
         int budget=0;
         for( Employee e: jobEmp.keySet()){
             Date [] temp = jobEmp.get(e);
-            long monthsBetween = ChronoUnit.MONTHS.between(
-                    LocalDate.parse((CharSequence) temp[0]).withDayOfMonth(1),
-                    LocalDate.parse((CharSequence) temp[1]).withDayOfMonth(1));
+            int date1 = Integer.parseInt(formatter.format(temp[0]));
+            int date2 = Integer.parseInt(formatter.format(temp[1]));
+            int monthsBetween = date2-date1;
             budget+=e.MonthIncomeEmp()+monthsBetween*100;
         }
         return budget;
