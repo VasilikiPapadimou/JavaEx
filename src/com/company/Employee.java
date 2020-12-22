@@ -12,6 +12,7 @@ public class Employee {
     private String domain; //eidikotita
     private String degree;
 
+
     public Employee(String fullName, Date birthDate, boolean isMarried,int noChild, int yearHire, String domain, String degree){
         this.fullName= fullName;
         this.birthDate= birthDate;
@@ -21,7 +22,7 @@ public class Employee {
         this.domain= domain;
         this.degree= degree;
     }
-//dghdfg
+
     public Employee(Employee employee){
         fullName=employee.fullName;
         birthDate=employee.birthDate;
@@ -31,7 +32,7 @@ public class Employee {
         domain=employee.domain;
         degree=employee.degree;
     }
-    public void MonthIncomeEmp(){
+    public int MonthIncomeEmp(){
         int price=750;
         if(noChild<=3)
             price+=60*noChild;
@@ -43,6 +44,13 @@ public class Employee {
         int threeyears = (year-yearHire)/3;
         price+=threeyears*40;
 
+        Job j=new Job();
+        j.isEmployed(this);
+
+        if(this instanceof Master){
+            price+=400;
+        }
+        return price;
     }
 
     public void setMarried(Boolean married) { isMarried = married; }

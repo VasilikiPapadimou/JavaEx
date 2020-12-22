@@ -12,6 +12,6 @@ public class Master extends Employee {
    public Master(Employee employee,Date startTime){
       super(employee);
       this.startTime=startTime;
-
    }
+
 }
