@@ -18,7 +18,10 @@ public class Department {
         this.description = description;
     }
 
-
+    public Department(String depName, String description) {
+        this.depName = depName;
+        this.description = description;
+    }
 
     public int PaymentExpences() {
         int sum=0;
