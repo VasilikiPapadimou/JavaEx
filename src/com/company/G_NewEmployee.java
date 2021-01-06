@@ -2,6 +2,10 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -27,6 +31,18 @@ public class G_NewEmployee extends JPanel {
         cb.setVisible(true);
         JButton save = new JButton("Αποθήκευση");
 
+        save.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                Employee employee = null;
+                try {
+                    employee = new Employee(fullname.getText(),new SimpleDateFormat("yyyy/MM/dd").parse(birthDate.getText()),isMarried.isSelected(),
+                            Integer.parseInt(childnum.getText()),Integer.parseInt(yearHired.getText()), specialized.getText(),String.valueOf(cb.getSelectedItem()));
+                } catch (ParseException parseException) {
+                    parseException.printStackTrace();
+                }
+                Main.employees.add(employee);
+            }});
+
 
         this.add(label1);
         this.add(fullname);
@@ -46,4 +62,10 @@ public class G_NewEmployee extends JPanel {
 
 
     }
+
+
+
+
 }
+
+

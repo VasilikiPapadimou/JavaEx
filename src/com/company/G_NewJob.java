@@ -2,6 +2,8 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class G_NewJob extends JPanel {
     public G_NewJob() {
@@ -18,5 +20,13 @@ public class G_NewJob extends JPanel {
         this.add(label2);
         this.add(jobDescription);
         this.add(save);
+
+        save.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                Job job = new Job(jobName.getText(),jobDescription.getText());
+                Main.jobs.add(job);
+            }});
+
     }
+
 }

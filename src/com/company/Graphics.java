@@ -8,9 +8,6 @@ import java.awt.event.KeyEvent;
 
 public class Graphics extends JPanel {
 
-
-
-
     public Graphics(){
         super(new GridLayout(1, 1));
 
@@ -25,7 +22,7 @@ public class Graphics extends JPanel {
         tabbedPane.addTab("Επεξεργασία Δεδομέων", null, panel2, "Does nothing");
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
 
-        JComponent panel3 =new JPanel();
+        JComponent panel3 =ViewItems();
         tabbedPane.addTab("Εμφάνιση στοιχείων", null, panel3, "Does nothing");
         tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
@@ -42,6 +39,39 @@ public class Graphics extends JPanel {
     }
 
 
+    protected JComponent ViewItems(){
+        JPanel panel = new JPanel(new GridLayout(4,1));
+        JLabel label = new JLabel("Επιλέξτε τα στοιχεία που θέλετε να εμφανίσετε:");
+        JButton employeeView = new JButton("Υπαλλήλοι");
+        JButton departmentView = new JButton("Τμήματα");
+        JButton jobView = new JButton("Έργα");
+
+
+        employeeView.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                employeeViewPress();
+            }
+
+        } );
+        departmentView.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                departmentViewPress();
+            }
+        } );
+        jobView.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jobViewPress();
+            }
+        } );
+
+        panel.add(label);
+        panel.add(employeeView);
+        panel.add(departmentView);
+        panel.add(jobView);
+        return panel;
+
+
+    }
 
     protected JComponent AddNew() {
         JPanel panel = new JPanel(new GridLayout(4,1));
@@ -73,6 +103,29 @@ public class Graphics extends JPanel {
         return panel;
     }
 
+    public void employeeViewPress(){
+        JFrame  employeeFrame= new JFrame("Στοιχεία εργασζομένων");
+        employeeFrame.setSize(500,200);
+
+        employeeFrame.add(new G_ViewEmployees(), BorderLayout.CENTER);
+        employeeFrame.pack();
+        employeeFrame.setVisible(true);
+    }
+    public void departmentViewPress(){
+        JFrame  departmentFrame= new JFrame("Στοιχεία τμήματος");
+        departmentFrame.setPreferredSize(new Dimension(400,200));
+        departmentFrame.add(new G_ViewDepartment(), BorderLayout.CENTER);
+        departmentFrame.pack();
+        departmentFrame.setVisible(true);
+    }
+    public void jobViewPress(){
+        JFrame  jobFrame= new JFrame("Στοιχεία εργασζομένων");
+        jobFrame.setPreferredSize(new Dimension(400,200));
+        jobFrame.add(new G_ViewJobs(), BorderLayout.CENTER);
+        jobFrame.pack();
+        jobFrame.setVisible(true);
+    }
+
     public void employeeButtonPress(){
         JFrame employeeFrame = new JFrame("New Employee");
         employeeFrame.setPreferredSize(new Dimension(400, 200));
@@ -84,6 +137,8 @@ public class Graphics extends JPanel {
         employeeFrame.pack();
         employeeFrame.setVisible(true);
     }
+
+
 
     public void departmentButtonPress(){
         JFrame departmentFrame = new JFrame("New Department");

@@ -31,6 +31,35 @@ public class Job {
            return false;
     }
 
+    public Job(String jobName, String description) {
+        this.jobName = jobName;
+        this.description = description;
+    }
+
+    public String getJobName() {
+        return jobName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public double getOutcome() {
+        return outcome;
+    }
+
+    public double getFuncOut() {
+        return funcOut;
+    }
+
+    public SimpleDateFormat getFormatter() {
+        return formatter;
+    }
+
     public HashMap<Employee, Date[]> getJobEmp() {
         return jobEmp;
     }

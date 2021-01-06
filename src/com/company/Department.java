@@ -42,6 +42,22 @@ public class Department {
        return job.get(found);
     }
 
+    public Master getMaster() {
+        return master;
+    }
+
+    public ArrayList<Job> getJob() {
+        return job;
+    }
+
+    public String getDepName() {
+        return depName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return "Department{" +

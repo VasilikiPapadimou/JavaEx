@@ -34,6 +34,9 @@ public class Employee {
         domain=employee.domain;
         degree=employee.degree;
     }
+
+
+
     public int MonthIncomeEmp(){
         int price=750;
         if(noChild<=3)
@@ -55,6 +58,38 @@ public class Employee {
         return price;
     }
 
+    public String[] getDegrees() {
+        return degrees;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public Boolean getMarried() {
+        return isMarried;
+    }
+
+    public int getNoChild() {
+        return noChild;
+    }
+
+    public int getYearHire() {
+        return yearHire;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
     public void setMarried(Boolean married) { isMarried = married; }
 
     public void setNoChild(int noChild) { this.noChild = noChild; }
@@ -65,15 +100,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "degrees=" + Arrays.toString(degrees) +
-                ", fullName='" + fullName + '\'' +
-                ", birthDate=" + birthDate +
-                ", isMarried=" + isMarried +
-                ", noChild=" + noChild +
-                ", yearHire=" + yearHire +
-                ", domain='" + domain + '\'' +
-                ", degree='" + degree + '\'' +
-                '}';
+        return  fullName + "\n" + birthDate +"\n" + isMarried +"\n" + noChild + "\n" + yearHire +"\n'" + domain  +"\n" + degree ;
     }
 }

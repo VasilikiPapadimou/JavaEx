@@ -3,8 +3,14 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Main {
+
+    public static ArrayList<Employee> employees = new ArrayList<Employee>();
+    public static ArrayList<Department> departments = new ArrayList<Department>();
+    public static ArrayList<Job> jobs = new ArrayList<Job>();
+
 
     public static void main(String[] args)  {
         SwingUtilities.invokeLater(new Runnable() {

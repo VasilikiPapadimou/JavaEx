@@ -2,6 +2,10 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class G_NewDepartment extends JPanel {
     public G_NewDepartment() {
@@ -19,7 +23,14 @@ public class G_NewDepartment extends JPanel {
         this.add(deptDescription);
         this.add(save);
 
+        save.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                Department department = null;
 
+                    department = new Department(deptName.getText(),deptDescription.getText());
+
+                Main.departments.add(department);
+            }});
 
 
     }
