@@ -100,6 +100,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return  fullName + "\n" + birthDate +"\n" + isMarried +"\n" + noChild + "\n" + yearHire +"\n'" + domain  +"\n" + degree ;
+        return  fullName ;
     }
 }

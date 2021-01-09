@@ -10,17 +10,20 @@ public class Department {
     private String depName;
     private String description;
 
-    public Department(Master master, ArrayList<Employee> employees, ArrayList<Job> job, String depName, String description) {
+    public Department(Master master, String depName, String description) {
         this.master = master;
         this.employees = employees;
-        this.job = job;
         this.depName = depName;
         this.description = description;
+        job = new ArrayList<Job>();
+        employees = new ArrayList<Employee>();
     }
 
     public Department(String depName, String description) {
         this.depName = depName;
         this.description = description;
+        this.job = new ArrayList<Job>();
+        employees = new ArrayList<Employee>();
     }
 
     public int PaymentExpences() {
@@ -60,18 +63,20 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
-                "master=" + master +
-                ", employees=" + employees +
-                ", job=" + job +
-                ", depName='" + depName + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return depName;
+    }
+    public void SetJob(Job j)
+    {
+        this.job.add(j);
     }
 
     public void ChangeDepartment(Department destinationdepart, Employee employee)  { }
 
     public void setMaster(Master master){this.master=master;}
+
+    public void setEmployees(Employee e){
+        employees.add(e);
+    }
 
     public ArrayList<Employee> getEmployees() { return employees; }
 }

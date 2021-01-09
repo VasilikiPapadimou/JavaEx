@@ -79,13 +79,6 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{" +
-                "jobName='" + jobName + '\'' +
-                ", description='" + description + '\'' +
-                ", income=" + income +
-                ", outcome=" + outcome +
-                ", funcOut=" + funcOut +
-                ", jobEmp=" + jobEmp +
-                '}';
+        return jobName;
     }
 }

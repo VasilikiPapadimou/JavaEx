@@ -14,6 +14,11 @@ public class Master extends Employee {
       this.startTime=startTime;
    }
 
+   @Override
+   public String toString() {
+      return "Master{" +
+              "startTime=" + startTime +
+              '}';
 
-
+   }
 }
