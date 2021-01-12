@@ -1,12 +1,13 @@
 package com.company;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Job {
+public class Job implements Serializable {
     private String jobName;
     private String description;
     private double income; //mikta esoda
@@ -34,6 +35,7 @@ public class Job {
     public Job(String jobName, String description) {
         this.jobName = jobName;
         this.description = description;
+        jobEmp= new HashMap<Employee,Date[]>();
     }
 
     public String getJobName() {
@@ -60,9 +62,14 @@ public class Job {
         return formatter;
     }
 
+    public void NewWorker(Employee emp ,Date[] dates){
+        jobEmp.put(emp,dates);
+    }
+
     public HashMap<Employee, Date[]> getJobEmp() {
         return jobEmp;
     }
+
     SimpleDateFormat formatter = new SimpleDateFormat("MM");
     public int JobExpenses() {
         int budget=0;

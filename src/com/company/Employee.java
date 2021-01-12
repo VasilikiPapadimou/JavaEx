@@ -1,10 +1,11 @@
 package com.company;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
-public class Employee {
+public class Employee implements Serializable {
     private String[] degrees = new String[]{"defterobathmia","panepistimiaki","metaptixiako","didaktoriko"};
     private String fullName;
     private Date birthDate;

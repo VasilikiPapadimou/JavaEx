@@ -40,11 +40,12 @@ public class Graphics extends JPanel {
 
 
     protected JComponent EditData(){
-        JPanel panel = new JPanel(new GridLayout(4,1));
+        JPanel panel = new JPanel(new GridLayout(5,1));
         JLabel label = new JLabel("Επεξεργασία:");
         JButton setMaster = new JButton("Ανάθεση Διευθυντή σε τμήμα");
         JButton setJob = new JButton("Ανάθεση έργου σε τμήμα");
         JButton setEmployee = new JButton("Ανάθεση εργασζομένου σε τμήματα");
+        JButton setEmployeetoJob = new JButton ("Ανάθεση εργαζομένου σε έργο");
 
         setMaster.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -67,23 +68,33 @@ public class Graphics extends JPanel {
             }
         });
 
+        setEmployeetoJob.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setEmployeetoJobViewPage();
+            }
+        });
+
         panel.add(label);
         panel.add(setMaster);
         panel.add(setJob);
         panel.add(setEmployee);
+        panel.add(setEmployeetoJob);
         return panel;
     }
 
 
 
+
     protected JComponent ViewItems(){
-        JPanel panel = new JPanel(new GridLayout(5,1));
+        JPanel panel = new JPanel(new GridLayout(7,1));
         JLabel label = new JLabel("Επιλέξτε τα στοιχεία που θέλετε να εμφανίσετε:");
         JButton employeeView = new JButton("Υπαλλήλοι");
         JButton departmentView = new JButton("Τμήματα");
         JButton jobView = new JButton("Έργα");
         JButton empNdepView = new JButton("Εργαζόμενοι και τμήματα");
         JButton jobNdepView = new JButton("Έργα και τμήματα");
+        JButton jobWorkersView = new JButton("Έργα και εργαζόμενοι");
 
 
         employeeView.addActionListener(new ActionListener() {
@@ -112,6 +123,11 @@ public class Graphics extends JPanel {
                 jobNdepViewPress();
             }
         } );
+        jobWorkersView.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jobWorkersViewPress();
+            }
+        } );
 
         panel.add(label);
         panel.add(employeeView);
@@ -119,10 +135,13 @@ public class Graphics extends JPanel {
         panel.add(jobView);
         panel.add(empNdepView);
         panel.add(jobNdepView);
+        panel.add(jobWorkersView);
         return panel;
 
 
     }
+
+
 
     protected JComponent AddNew() {
         JPanel panel = new JPanel(new GridLayout(4,1));
@@ -191,6 +210,15 @@ public class Graphics extends JPanel {
         jobNdepFrame.setVisible(true);
     }
 
+    private void jobWorkersViewPress() {
+        JFrame  jobNdepFrame= new JFrame("Στοιχεία έργων και εργαζομένων");
+        jobNdepFrame.setPreferredSize(new Dimension(400,200));
+        jobNdepFrame.add(new G_jobWorkersView(), BorderLayout.CENTER);
+        jobNdepFrame.pack();
+        jobNdepFrame.setVisible(true);
+    }
+
+
     public void setEmployeeViewPage(){
         JFrame empolyeeframe = new JFrame("Ανάθεση εργαζομένου σε τμήμα");
         empolyeeframe.setPreferredSize(new Dimension(400,200));
@@ -230,6 +258,18 @@ public class Graphics extends JPanel {
 
         //Add content to the window.
         jobFrame.add(new G_SetMaster(), BorderLayout.CENTER);
+
+        //Display the window.
+        jobFrame.pack();
+        jobFrame.setVisible(true);
+    }
+
+    private void setEmployeetoJobViewPage() {
+        JFrame jobFrame = new JFrame("Ανάθεση εργαζομένου σε έργο");
+        jobFrame.setPreferredSize(new Dimension(400, 200));
+
+        //Add content to the window.
+        jobFrame.add(new G_SetEmpToJob(), BorderLayout.CENTER);
 
         //Display the window.
         jobFrame.pack();
