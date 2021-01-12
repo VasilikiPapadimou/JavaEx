@@ -1,18 +1,16 @@
 package com.company;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashMap;
 
 public class Job {
     private String jobName;
     private String description;
-    private double income; //mikta esoda
-    private double outcome; //pagia
-    private double funcOut; //leitoyrgika exoda
-    private HashMap<Employee, Date[]> jobEmp; // gia hme/nia enarxis, lixis ergou
+    private double income; //mixed incomings
+    private double outcome; //devices we own (pagia)
+    private double funcOut; //Operational Outcomes
+    private HashMap<Employee, Date[]> jobEmp; // Hashmap to store employees' start and end date of a job
 
     public Job(String jobName, String description, double income, double outcome, double funcOut, HashMap<Employee, Date[]> jobEmp) {
         this.jobName = jobName;
@@ -23,6 +21,7 @@ public class Job {
         this.jobEmp = jobEmp;
     }
 
+    //To check if the Employees passed on the HashMap are employed or not
     public boolean isEmployed(Employee employee){
         for( Employee e: jobEmp.keySet()){
             if(employee==e)
@@ -33,7 +32,9 @@ public class Job {
 
     public HashMap<Employee, Date[]> getJobEmp() {
         return jobEmp;
-    }
+    }//returns the Hashmap
+
+    //in order to take only the month
     SimpleDateFormat formatter = new SimpleDateFormat("MM");
     public int JobExpenses() {
         int budget=0;
@@ -46,6 +47,7 @@ public class Job {
         }
         return budget;
     }
+
     public double PureIncome(){ return  income-outcome-funcOut-JobExpenses(); }
 
     @Override

@@ -1,6 +1,9 @@
 package com.company;
 
 import java.util.Date;
+/**
+ * Inherits all the Employee properties
+ * */
 
 public class Master extends Employee {
    private Date  startTime;
@@ -13,7 +16,4 @@ public class Master extends Employee {
       super(employee);
       this.startTime=startTime;
    }
-
-
-
 }

@@ -11,9 +11,8 @@ public class Employee {
     private Boolean isMarried;
     private int noChild;
     private int yearHire;
-    private String domain; //eidikotita
+    private String domain; //specialty
     private String degree;
-
 
     public Employee(String fullName, Date birthDate, boolean isMarried,int noChild, int yearHire, String domain, String degree){
         this.fullName= fullName;
@@ -24,7 +23,7 @@ public class Employee {
         this.domain= domain;
         this.degree= degree;
     }
-
+    //constructor for employees that are Masters
     public Employee(Employee employee){
         fullName=employee.fullName;
         birthDate=employee.birthDate;
@@ -39,19 +38,16 @@ public class Employee {
         if(noChild<=3)
             price+=60*noChild;
         for(int i =0; i<degrees.length; i++)
-            if(degree.equals(degrees[i]))
+            if(degree.equals(degrees[i])) //To check if they match and give the amount of money needed
                 price+=80*i;
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy");
         Date date = new Date();
+        //to convert Date date to Integer we use wrappers
         int threeyears= Integer.parseInt(formatter.format(date))/yearHire;
         price+=threeyears*40;
 
-        //Job j=new Job();
-      // j.isEmployed(this);
-
-        if(this instanceof Master){
-            price+=400;
-        }
+        //if employee is type of Master
+        if(this instanceof Master){ price+=400; }
         return price;
     }
 

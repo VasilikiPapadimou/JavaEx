@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -42,7 +40,6 @@ public class Main {
 
 
 
-//String jobName, String description, double income, double outcome, double funcOut, HashMap<Employee, Date[]> jobEmp
         ArrayList<Employee> temp1 = dep1.getEmployees();
         HashMap<Employee, Date[]> h1 = new HashMap();
         h1.put(emp1,new Date[]{format.parse("4/10/2020"),format.parse("11/10/2021")});
