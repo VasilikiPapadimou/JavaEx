@@ -10,9 +10,7 @@ import java.util.ArrayList;
  * Arraylist<Employee> getEmployees --> returns the employees from the Arraylist
  * PaymentExpences() --> counts the amount of money payed FOR EACH Employee employee that is in the ArrayList
  *                       and adds the exact amount accounted for the Masters
- * MaxPureIncome --> counts the incoming money came from the job
- * budget and distributes it the the Employees accordingly
- *
+ * MaxPureIncome --> counts the job that gives the Max incoming money to the company
  * toString --> to visualise the outcome of this class in Main
  **/
 public class Department {
