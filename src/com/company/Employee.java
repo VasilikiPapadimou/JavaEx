@@ -2,9 +2,18 @@ package com.company;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-
+/**
+ * I use an array String to store the degrees and then I parse them as String degree
+ * The first Constructor is general ,
+ * The second Constructor creates an Employee employee that also is a Master
+ *
+ * MonthIncomeEmp --> Calculates the monthly amount of money an employee takes
+ *                    according to the degrees, number of children, the years he/she worked in
+ *                    the company and if he/she is Master or not
+ * I created the set accessors that were asked
+ * toString --> to visualise the fullName property of this class
+ **/
 public class Employee implements Serializable {
     private String[] degrees = new String[]{"defterobathmia","panepistimiaki","metaptixiako","didaktoriko"};
     private String fullName;
@@ -36,8 +45,6 @@ public class Employee implements Serializable {
         degree=employee.degree;
     }
 
-
-
     public int MonthIncomeEmp(){
         int price=750;
         if(noChild<=3)
@@ -49,13 +56,7 @@ public class Employee implements Serializable {
         Date date = new Date();
         int threeyears= Integer.parseInt(formatter.format(date))/yearHire;
         price+=threeyears*40;
-
-        //Job j=new Job();
-      // j.isEmployed(this);
-
-        if(this instanceof Master){
-            price+=400;
-        }
+        if(this instanceof Master){ price+=400; }
         return price;
     }
 
