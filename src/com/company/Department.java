@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *                       and adds the exact amount accounted for the Masters
  * MaxPureIncome --> counts the job that gives the Max incoming money to the company
  * setMaster --> Sets a master from Master class as the Department master
- * toString --> to visualise the outcome of this class 
+ * toString --> to visualise the outcome of this class
  **/
 public class Department implements Serializable {
 
