@@ -12,7 +12,9 @@ import java.util.ArrayList;
  *                       and adds the exact amount accounted for the Masters
  * MaxPureIncome --> counts the incoming money came from the job
  * budget and distributes it the the Employees accordingly
- * **/
+ *
+ * toString --> to visualise the outcome of this class in Main
+ **/
 public class Department {
 
     private Master master;
