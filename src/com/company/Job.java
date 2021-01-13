@@ -79,19 +79,15 @@ public class Job implements Serializable {
     public String getJobName() {
         return jobName;
     }
-
     public String getDescription() {
         return description;
     }
-
     public double getIncome() {
         return income;
     }
-
     public double getOutcome() {
         return outcome;
     }
-
     public double getFuncOut() {
         return funcOut;
     }

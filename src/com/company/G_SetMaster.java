@@ -5,8 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class G_SetMaster extends JPanel {
@@ -15,7 +13,7 @@ public class G_SetMaster extends JPanel {
         super( new GridLayout(3,2));
 
 
-        JLabel employee = new JLabel("Εργαζόμενοι");
+        JLabel employee = new JLabel("Διευθυντής");
         JComboBox<Employee> cb = new JComboBox<Employee>(Main.employees.toArray(new Employee[0]));
         JLabel department = new JLabel("Τμήμα");
         JComboBox<Department> cb2 = new JComboBox<Department>(Main.departments.toArray(new Department[0]));

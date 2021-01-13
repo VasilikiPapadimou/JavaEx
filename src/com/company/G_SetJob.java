@@ -11,7 +11,7 @@ public class G_SetJob extends JPanel {
     public  G_SetJob() {
         super(new GridLayout(3, 2));
 
-        JLabel job = new JLabel("Εργαζόμενοι");
+        JLabel job = new JLabel("Έργα");
         JComboBox<Job> job1 = new JComboBox<Job>(Main.jobs.toArray(new Job[0]));
         JLabel department = new JLabel("Τμήμα");
         JComboBox<Department> dep = new JComboBox<Department>(Main.departments.toArray(new Department[0]));

@@ -13,7 +13,7 @@ public class G_NewEmployee extends JPanel {
     public G_NewEmployee() {
         super(new GridLayout(8, 2));
         JLabel label1 = new JLabel("Ονοματεπώνυμο: ");
-        JLabel label2 = new JLabel("Ημερομηνία γέννησης: (yyyy-mm-dd)");
+        JLabel label2 = new JLabel("Ημερομηνία γέννησης: (yyyy/mm/dd)");
         JLabel label3 = new JLabel("Οικογενείακή κατάσταση : ");
         JLabel label4 = new JLabel("Αριθμός τέκνων : ");
         JLabel label5 = new JLabel("Χρονολογία πρόσληψης : ");

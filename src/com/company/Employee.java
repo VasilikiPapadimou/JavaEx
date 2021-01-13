@@ -63,41 +63,30 @@ public class Employee implements Serializable {
     public String[] getDegrees() {
         return degrees;
     }
-
     public String getFullName() {
         return fullName;
     }
-
     public Date getBirthDate() {
         return birthDate;
     }
-
     public Boolean getMarried() {
         return isMarried;
     }
-
     public int getNoChild() {
         return noChild;
     }
-
     public int getYearHire() {
         return yearHire;
     }
-
     public String getDomain() {
         return domain;
     }
-
     public String getDegree() {
         return degree;
     }
-
     public void setMarried(Boolean married) { isMarried = married; }
-
     public void setNoChild(int noChild) { this.noChild = noChild; }
-
     public void setDomain(String domain) { this.domain = domain; }
-
     public void setDegree(String degree) { this.degree = degree; }
 
     @Override
