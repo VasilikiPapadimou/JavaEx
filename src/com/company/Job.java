@@ -7,8 +7,7 @@ import java.util.HashMap;
 /**
  * I need a HashMap to pass the Employees and the Dates to correlate them with Jobs
  * HashMap<Employee, Date[]> --> (Key) employees' start and end (Value) date of a job
- * I created the full Constructor and
- * A 2nd one to get only the jobName and the description. Every job HAS employees,
+ * The 2nd constructor is used to get only the jobName and the description. Every job HAS employees,
  * that's why i need also the HashMap jobEmp in this Constructor
  *
  * isEmployed --> to check for every Employee e if it matches the keySet of jobEmp object ==> Employed

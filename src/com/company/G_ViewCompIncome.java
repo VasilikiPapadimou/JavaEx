@@ -1,6 +1,12 @@
 package com.company;
 
-import java.awt.*;
+import javax.swing.*;
 
-public class G_ViewCompIncome extends Component {
+public class G_ViewCompIncome extends JPanel {
+    public G_ViewCompIncome() {
+        super();
+
+
+
+    }
 }

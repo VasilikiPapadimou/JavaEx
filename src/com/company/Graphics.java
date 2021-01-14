@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 /**
  * This is the main class for the whole graphics environment
- * Generally I want the Main Panel to have some tabs (JTabbedPane) and there
- * I will put the graphics needed with the actions need to be performed mentioned
+ * I want the Main Panel to have some tabs (JTabbedPane) and there
+ * I will put the graphics needed with the actions need to be performed
  *
  * AddNew --> to create the graphics in "Προσθήκη" tabbedPane
  * EditData --> to create the graphics in "Επεξεργασία Δεδομέων" tabbedPane
@@ -24,6 +24,7 @@ public class Graphics extends JPanel {
         super(new GridLayout(1, 1));
         JTabbedPane tabbedPane = new JTabbedPane();
 
+        /*Creation of tabs*/
         JComponent panel1 = AddNew();
         tabbedPane.addTab("Προσθήκη", null, panel1, "Adds Info");
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
@@ -178,6 +179,7 @@ public class Graphics extends JPanel {
         //Display the window.
         employeeFrame.pack();
         employeeFrame.setVisible(true);
+
     }
     public void departmentButtonPress(){
         JFrame departmentFrame = new JFrame("Νεο Τμήμα");
@@ -217,6 +219,7 @@ public class Graphics extends JPanel {
     public void setEmployeeViewPage(){
         JFrame employeeFrame = new JFrame("Ανάθεση εργαζομένου σε τμήμα");
         employeeFrame.setPreferredSize(new Dimension(300,200));
+
         employeeFrame.add(new G_SetEmployee(), BorderLayout.CENTER);
         employeeFrame.pack();
         employeeFrame.setVisible(true);
@@ -244,6 +247,7 @@ public class Graphics extends JPanel {
     public void departmentViewPress(){
         JFrame  departmentFrame= new JFrame("Επεξεργασία στοιχείων τμήματος");
         departmentFrame.setPreferredSize(new Dimension(500,200));
+
         departmentFrame.add(new G_ViewDepartment(), BorderLayout.CENTER);
         departmentFrame.pack();
         departmentFrame.setVisible(true);
@@ -251,21 +255,24 @@ public class Graphics extends JPanel {
     public void jobViewPress(){
         JFrame  jobFrame= new JFrame("Επεξεργασία στοιχείων έργων");
         jobFrame.setPreferredSize(new Dimension(500,200));
+
         jobFrame.add(new G_ViewJobs(), BorderLayout.CENTER);
         jobFrame.pack();
         jobFrame.setVisible(true);
 
     }
     public void empNdepViewPress(){
-        JFrame  jobFrame= new JFrame("Επεξεργασία στοιχείων εργαζομένων και τμημάτων");
-        jobFrame.setPreferredSize(new Dimension(450,300));
-        jobFrame.add(new G_ViewEmpNDeps(), BorderLayout.CENTER);
-        jobFrame.pack();
-        jobFrame.setVisible(true);
+        JFrame  empNdepFrame= new JFrame("Επεξεργασία στοιχείων εργαζομένων και τμημάτων");
+        empNdepFrame.setPreferredSize(new Dimension(450,300));
+
+        empNdepFrame.add(new G_ViewEmpNDeps(), BorderLayout.CENTER);
+        empNdepFrame.pack();
+        empNdepFrame.setVisible(true);
     }
     public void jobNdepViewPress(){
         JFrame  jobNdepFrame= new JFrame("Επεξεργασία στοιχείων έργων και τμημάτων");
         jobNdepFrame.setPreferredSize(new Dimension(450,300));
+
         jobNdepFrame.add(new G_ViewJobsNDeps(), BorderLayout.CENTER);
         jobNdepFrame.pack();
         jobNdepFrame.setVisible(true);
@@ -273,7 +280,8 @@ public class Graphics extends JPanel {
     private void jobWorkersViewPress() {
         JFrame  jobNdepFrame= new JFrame("Εμφάνιση στοιχείων έργων και εργαζομένων");
         jobNdepFrame.setPreferredSize(new Dimension(450,300));
-        jobNdepFrame.add(new G_jobWorkersView(), BorderLayout.CENTER);
+
+        jobNdepFrame.add(new G_JobWorkersView(), BorderLayout.CENTER);
         jobNdepFrame.pack();
         jobNdepFrame.setVisible(true);
     }

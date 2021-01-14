@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * Every Employee that is Master is assigned ONLY in 1 Department
  * Every Department can have more than 1 Jobs
  *
- * Constructor Department --> includes ALL types of Employees (Master) and Job
  * Arraylist<Employee> getEmployees --> returns the employees from the Arraylist
  * PaymentExpences() --> counts the amount of money payed FOR EACH Employee employee that is in the ArrayList
  *                       and adds the exact amount accounted for the Masters
@@ -16,7 +15,6 @@ import java.util.ArrayList;
  * toString --> to visualise the outcome of this class
  **/
 public class Department implements Serializable {
-
     private Master master;
     private ArrayList<Employee> employees;
     private ArrayList<Job> job; // anathesi ypaliloy poy anhkei se tmhma ths etereias se sygekrimeno ergo
@@ -31,7 +29,7 @@ public class Department implements Serializable {
         job = new ArrayList<Job>();
         employees = new ArrayList<Employee>();
     }
-
+    //used in G_NewDepartment,
     public Department(String depName, String description) {
         this.depName = depName;
         this.description = description;
@@ -39,7 +37,7 @@ public class Department implements Serializable {
         employees = new ArrayList<Employee>();
     }
 
-    public int PaymentExpences() {
+    public int PaymentExpenses() {
         int sum=0;
         for(Employee employee : employees){
             sum+=employee.MonthIncomeEmp();
@@ -59,17 +57,13 @@ public class Department implements Serializable {
     }
 
     public void setMaster(Master master){this.master=master;}
-
     public void setEmployees(Employee e){
         employees.add(e);
     } // add-> used for lists
-
     public void SetJob(Job j)
     {
         this.job.add(j);
     }
-
-
     public Master getMaster() {
         return master;
     }

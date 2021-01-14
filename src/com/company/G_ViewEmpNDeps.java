@@ -27,8 +27,8 @@ public class G_ViewEmpNDeps extends JPanel {
             public void actionPerformed(ActionEvent e) { // orismos master kai department se employees
                 Department d = (Department) depa.getSelectedItem();
                 textJob.setText("");
-                for (Employee j : d.getEmployees()){
-                    textJob.append(j.toString());
+                for (Employee em : d.getEmployees()){
+                    textJob.append(em.toString());
                     textJob.append("\n");
                 }
             }});

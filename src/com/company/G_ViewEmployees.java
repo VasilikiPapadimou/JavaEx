@@ -2,8 +2,6 @@ package com.company;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import java.awt.*;
 
 public class G_ViewEmployees extends JPanel {
 

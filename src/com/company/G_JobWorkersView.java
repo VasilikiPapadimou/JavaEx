@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class G_jobWorkersView extends JPanel {
-    public G_jobWorkersView() {
+public class G_JobWorkersView extends JPanel {
+    public G_JobWorkersView() {
         super(new GridLayout(5,2));
         JLabel joblabel = new JLabel("Έργο");
         JComboBox<Job> job = new JComboBox<Job>(Main.jobs.toArray(new Job[0]));
