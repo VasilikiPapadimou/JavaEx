@@ -17,7 +17,7 @@ public class G_ViewDepartment extends JPanel {
         //Info from Department class
         for(Department d : Main.departments){
             try{
-                rowData[0]= d.getDepName();
+                rowData[0]= d.getDepName(); //*********** Emfanizei olo to idio
                 rowData[1]= d.getDescription();
                 rowData[2]= d.getMaster().getFullName();
 

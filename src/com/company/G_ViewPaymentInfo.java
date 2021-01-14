@@ -22,7 +22,7 @@ public class G_ViewPaymentInfo extends JPanel {
                 try{
                     //rowData[0]= d.getEmployees(); ***********************
                     rowData[1]= d.getDepName();
-                    rowData[2]= d.PaymentExpenses();
+                    rowData[2]= d.PaymentExpenses(); // This method includes MonthIncomeEmp
                 }catch(Exception e){
                     rowData[2]="";
                 }

@@ -27,8 +27,7 @@ public class G_SetEmployee extends JPanel {
                 Employee empl = (Employee) emp.getSelectedItem();
                 Department depart = (Department) dep.getSelectedItem();
                 depart.setEmployees(empl);
-
-
+                
             }});
     }
 }

@@ -45,6 +45,7 @@ public class Department implements Serializable {
         sum+= master.MonthIncomeEmp();
         return sum;
     }
+
     public Job MaxPureInc(){
         double max=0;
         int found=0;
