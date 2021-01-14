@@ -4,9 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * Similarly coding method with G_ViewJobsNDeps and G_ViewJobNEmps
+ * */
 public class G_ViewEmpNDeps extends JPanel {
-
     public G_ViewEmpNDeps() {
         super(new GridLayout(5,2));
         JLabel department = new JLabel("Τμήμα");
@@ -15,19 +16,21 @@ public class G_ViewEmpNDeps extends JPanel {
         JTextArea textJob =new JTextArea();
         textJob.setEditable(false);
 
-        JButton save = new JButton("Εμφάνιση");
+        JButton view = new JButton("Εμφάνιση");
         job.setVisible(true);
         this.add(department);
         this.add(depa);
         this.add(job);
         this.add(textJob);
-        this.add(save);
+        this.add(view);
 
-        save.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) { // orismos master kai department se employees
+        view.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
                 Department d = (Department) depa.getSelectedItem();
                 textJob.setText("");
+                //For each employee of the department (Arraylist<Employee> getEmployees())
                 for (Employee em : d.getEmployees()){
+                    //Passes the result at the end of the file as String
                     textJob.append(em.toString());
                     textJob.append("\n");
                 }

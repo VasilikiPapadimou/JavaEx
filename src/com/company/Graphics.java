@@ -245,7 +245,7 @@ public class Graphics extends JPanel {
         employeeFrame.setVisible(true);
     }
     public void departmentViewPress(){
-        JFrame  departmentFrame= new JFrame("Επεξεργασία στοιχείων τμήματος");
+        JFrame  departmentFrame= new JFrame("Εμφάνιση στοιχείων τμήματος");
         departmentFrame.setPreferredSize(new Dimension(500,200));
 
         departmentFrame.add(new G_ViewDepartment(), BorderLayout.CENTER);
@@ -253,7 +253,7 @@ public class Graphics extends JPanel {
         departmentFrame.setVisible(true);
     }
     public void jobViewPress(){
-        JFrame  jobFrame= new JFrame("Επεξεργασία στοιχείων έργων");
+        JFrame  jobFrame= new JFrame("Εμφάνιση στοιχείων έργων");
         jobFrame.setPreferredSize(new Dimension(500,200));
 
         jobFrame.add(new G_ViewJobs(), BorderLayout.CENTER);
@@ -262,7 +262,7 @@ public class Graphics extends JPanel {
 
     }
     public void empNdepViewPress(){
-        JFrame  empNdepFrame= new JFrame("Επεξεργασία στοιχείων εργαζομένων και τμημάτων");
+        JFrame  empNdepFrame= new JFrame("Εμφάνιση στοιχείων εργαζομένων και τμημάτων");
         empNdepFrame.setPreferredSize(new Dimension(450,300));
 
         empNdepFrame.add(new G_ViewEmpNDeps(), BorderLayout.CENTER);
@@ -270,7 +270,7 @@ public class Graphics extends JPanel {
         empNdepFrame.setVisible(true);
     }
     public void jobNdepViewPress(){
-        JFrame  jobNdepFrame= new JFrame("Επεξεργασία στοιχείων έργων και τμημάτων");
+        JFrame  jobNdepFrame= new JFrame("Εμφάνιση στοιχείων έργων και τμημάτων");
         jobNdepFrame.setPreferredSize(new Dimension(450,300));
 
         jobNdepFrame.add(new G_ViewJobsNDeps(), BorderLayout.CENTER);
@@ -278,12 +278,12 @@ public class Graphics extends JPanel {
         jobNdepFrame.setVisible(true);
     }
     private void jobWorkersViewPress() {
-        JFrame  jobNdepFrame= new JFrame("Εμφάνιση στοιχείων έργων και εργαζομένων");
-        jobNdepFrame.setPreferredSize(new Dimension(450,300));
+        JFrame  jobNEmpFrame= new JFrame("Εμφάνιση στοιχείων έργων και εργαζομένων");
+        jobNEmpFrame.setPreferredSize(new Dimension(450,300));
 
-        jobNdepFrame.add(new G_JobWorkersView(), BorderLayout.CENTER);
-        jobNdepFrame.pack();
-        jobNdepFrame.setVisible(true);
+        jobNEmpFrame.add(new G_ViewJobNEmps(), BorderLayout.CENTER);
+        jobNEmpFrame.pack();
+        jobNEmpFrame.setVisible(true);
     }
 
 
