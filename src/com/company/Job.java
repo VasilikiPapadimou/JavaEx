@@ -81,15 +81,6 @@ public class Job implements Serializable {
     public String getDescription() {
         return description;
     }
-    public double getIncome() {
-        return income;
-    }
-    public double getOutcome() {
-        return outcome;
-    }
-    public double getFuncOut() {
-        return funcOut;
-    }
 
     public HashMap<Employee, Date[]> getJobEmp() { return jobEmp; }
 
