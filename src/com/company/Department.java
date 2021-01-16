@@ -2,6 +2,8 @@ package com.company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+
 /**
  * Every Department HAS Employees and Master Employees, and HAS Jobs
  * Every Employee that is Master is assigned ONLY in 1 Department
@@ -23,7 +25,7 @@ public class Department implements Serializable {
 
     public Department(Master master, String depName, String description) {
         this.master = master;
-        this.employees = employees;
+        //this.employees = employees;
         this.depName = depName;
         this.description = description;
         job = new ArrayList<Job>();
@@ -35,6 +37,14 @@ public class Department implements Serializable {
         this.description = description;
         this.job = new ArrayList<Job>();
         employees = new ArrayList<Employee>();
+    }
+
+    public ArrayList<Employee> ReturnAllEmployees(){
+        ArrayList<Employee> allEmployee = this.employees;
+        if(master!=null){
+            allEmployee.add(master);
+        }
+        return allEmployee;
     }
 
     public int PaymentExpenses() {
@@ -69,7 +79,13 @@ public class Department implements Serializable {
         return master;
     }
 
-    public ArrayList<Employee> getEmployees() { return employees; }
+    public ArrayList<Employee> getEmployees() {
+        ArrayList<Employee> temp =this.employees;
+        HashSet hs = new HashSet();
+        hs.addAll(temp);
+        temp.clear();
+        temp.addAll(hs);
+    return temp;}
 
     public ArrayList<Job> getJob() {
         return job;

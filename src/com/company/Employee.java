@@ -1,8 +1,12 @@
 package com.company;
 
 import java.io.Serializable;
+import java.lang.annotation.Native;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Objects;
+
 /**
  * I use an array String to store the degrees and then I parse them as String degree
  * The first Constructor is general ,
@@ -57,6 +61,13 @@ public class Employee implements Serializable {
         int threeyears= Integer.parseInt(formatter.format(date))/yearHire;
         price+=threeyears*40;
         if(this instanceof Master){ price+=400; }
+        for(Job j :  Main.jobs){
+            for(Employee emp : j.getJobEmp().keySet()){
+                if(emp.equals(this)){
+                    price+=100;
+                }
+            }
+        }
         return price;
     }
 
@@ -92,5 +103,18 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         return  fullName ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+        Employee employee = (Employee) o;
+        return noChild == employee.noChild && yearHire == employee.yearHire && Arrays.equals(degrees, employee.degrees) && Objects.equals(fullName, employee.fullName) && Objects.equals(birthDate, employee.birthDate) && Objects.equals(isMarried, employee.isMarried) && Objects.equals(domain, employee.domain) && Objects.equals(degree, employee.degree);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }

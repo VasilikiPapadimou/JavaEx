@@ -36,9 +36,12 @@ public class Job implements Serializable {
         this.jobEmp = jobEmp;
     }
 
-    public Job(String jobName, String description) {
+    public Job(String jobName, String description,double income,double outcome,double funcOut) {
         this.jobName = jobName;
         this.description = description;
+        this.income=income;
+        this.outcome=outcome;
+        this.funcOut=funcOut;
         jobEmp= new HashMap<Employee,Date[]>();
     }
 

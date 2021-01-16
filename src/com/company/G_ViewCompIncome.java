@@ -16,18 +16,14 @@ public class G_ViewCompIncome extends JPanel {
         String [] columnnames ={"Όνομα Έργων","Όνομα Τμήματος", "Έσοδα"};
         DefaultTableModel model = new DefaultTableModel (columnnames,0);
         Object rowData[] = new Object[3]; //creation of 3 columns
-        for(Job j : Main.jobs){
-            rowData[0] = j.getJobName();
-            rowData[1] = j.PureIncome(); // *********** Ta emfanizei anapoda sthn kartela  onoma ta exoda kai to anapodo
-            for(Department d : Main.departments)
-              try{
-                  rowData[2]= d.getDepName();
-                  //Department department = new Department(d.getDepName(),Main.jobs.toString());
-              }catch(Exception e){
-                  rowData[2]="";
-              }
-
-            model.addRow(rowData);
+        for(Department d : Main.departments)
+        {
+            rowData[1] = d.getDepName();
+            for(Job j : d.getJob()){
+                rowData[0] = j.getJobName();
+                rowData[2] = j.PureIncome(); //
+                model.addRow(rowData);
+            }
         }
         JTable table = new JTable(model);
         table.setBounds(100,60,200,300);
