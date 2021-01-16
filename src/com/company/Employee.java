@@ -25,7 +25,7 @@ public class Employee implements Serializable {
     private Boolean isMarried;
     private int noChild;
     private int yearHire;
-    private String domain; //eidikotita
+    private String domain; //specialty
     private String degree;
 
 
