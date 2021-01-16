@@ -99,9 +99,6 @@ public class Department implements Serializable {
         return description;
     }
 
-    //To move an Employee to another Department
-    public void ChangeDepartment(Department destinationdepart, Employee employee)  { }
-
     @Override
     public String toString() {
         return depName;

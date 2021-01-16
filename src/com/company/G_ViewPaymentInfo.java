@@ -30,16 +30,12 @@ public class G_ViewPaymentInfo extends JPanel {
                 rowData[2] = em.MonthIncomeEmp();
                 model.addRow(rowData);
             }
-
-
-
         }
         JTable table = new JTable(model);
         table.setBounds(100,60,200,300);
         JScrollPane sp=new JScrollPane(table);
 
         this.add(sp);
-
 
     }
 }

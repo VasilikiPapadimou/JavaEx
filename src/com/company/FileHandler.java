@@ -48,10 +48,7 @@ public class FileHandler {
         try {
             ObjectInputStream ois = new ObjectInputStream(fis);
             while(cont){
-
-
                     deps = (ArrayList<Department>) ois.readObject();
-
                 if(deps == null)
                     cont = false;
             }

@@ -18,7 +18,7 @@ public class G_ViewJobs extends JPanel {
                 rowData[1]= j.getDescription();
             for(Department d : Main.departments)
                 try{
-                rowData[2] = d.getDepName(); //***************** Emfanizei olo to idio
+                rowData[2] = d.getDepName();
                 }catch(Exception e){
                     rowData[2]="";
                 }

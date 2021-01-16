@@ -24,7 +24,7 @@ public class Graphics extends JPanel {
         super(new GridLayout(1, 1));
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        /*Creation of tabs*/
+        //Creation of tabs
         JComponent panel1 = AddNew();
         tabbedPane.addTab("Προσθήκη", null, panel1, "Adds Info");
         tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);

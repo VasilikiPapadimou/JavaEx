@@ -95,10 +95,6 @@ public class Employee implements Serializable {
     public String getDegree() {
         return degree;
     }
-    public void setMarried(Boolean married) { isMarried = married; }
-    public void setNoChild(int noChild) { this.noChild = noChild; }
-    public void setDomain(String domain) { this.domain = domain; }
-    public void setDegree(String degree) { this.degree = degree; }
 
     @Override
     public String toString() {
