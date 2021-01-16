@@ -8,9 +8,6 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * I use an array String to store the degrees and then I parse them as String degree
- * The first Constructor is general ,
- * The second Constructor creates an Employee employee that also is a Master
  *
  * MonthIncomeEmp --> Calculates the monthly amount of money an employee takes
  *                    according to the degrees, number of children, the years he/she worked in
