@@ -6,14 +6,11 @@ import java.util.HashMap;
 /**
  * I need a HashMap to pass the Employees and the Dates to correlate them with Jobs
  * HashMap<Employee, Date[]> --> (Key) employees' start and end (Value) date of a job
- * I created the full Constructor
- * I use the accessor get of this property to extract the data for a jobEmp object
  *
- * isEmployed --> to check for every Employee e if it matches the keySet of jobEmp object
  * JobExpences --> calculates the budget that's available from the company to pay for a job
  *                 To calculate it we need the MonthIncomeEmp from Employee class and the months
  *                 the employee works on it
- * PureIncome--> Calculation of Pure income according to the instructions
+ * PureIncome--> Calculation of a Job's Pure income according to the instructions
  * toString --> to visualise the outcome of this class in Main
  **/
 public class Job {
@@ -37,7 +34,7 @@ public class Job {
         return jobEmp;
     }
 
-    //To check if the Employees passed on the HashMap are employed or not
+    //to check for every Employee e if it matches the keySet of jobEmp object
     public boolean isEmployed(Employee employee){
         for( Employee e: jobEmp.keySet()){
             if(employee==e)
@@ -49,6 +46,7 @@ public class Job {
     //in order to take only the month
     SimpleDateFormat formatter = new SimpleDateFormat("MM");
 
+    //Income of the Job
     public int JobExpenses() {
         int budget=0;
         for( Employee e: jobEmp.keySet()){

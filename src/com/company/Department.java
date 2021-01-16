@@ -6,18 +6,15 @@ import java.util.ArrayList;
  * Every Employee that is Master is assigned ONLY in 1 Department
  * Every Department can have more than 1 Jobs
  *
- * Constructor Department --> includes ALL types of Employees (Master) and Job
- * Arraylist<Employee> getEmployees --> returns the employees from the Arraylist
- * PaymentExpences() --> counts the amount of money payed FOR EACH Employee employee that is in the ArrayList
+ * PaymentExpences() --> counts the amount of money payed FOR EACH Employee in the ArrayList
  *                       and adds the exact amount accounted for the Masters
  * MaxPureIncome --> counts the job that gives the Max incoming money to the company
  * toString --> to visualise the outcome of this class in Main
  **/
 public class Department {
-
     private Master master;
     private ArrayList<Employee> employees;
-    private ArrayList<Job> job; // anathesi ypaliloy poy anhkei se tmhma ths etereias se sygekrimeno ergo
+    private ArrayList<Job> job;
     private String depName;
     private String description;
 
@@ -28,6 +25,7 @@ public class Department {
         this.depName = depName;
         this.description = description;
     }
+    //gets the employees of the department
     public ArrayList<Employee> getEmployees() { return employees; }
 
     public int PaymentExpences() {
@@ -37,7 +35,7 @@ public class Department {
         }
         sum+= master.MonthIncomeEmp();
         return sum;
-    }   ///gia to trexon etos leei
+    }
 
     public Job MaxPureInc(){
         double max=0;
@@ -49,10 +47,9 @@ public class Department {
         }
        return job.get(found);
     }
-    //To move an Employee to another Department
-    public void ChangeDepartment(Department destinationdepart, Employee employee){
 
-    }
+    //To move an Employee to another Department (No info given about the actions need to be done)
+    public void ChangeDepartment(Department destinationdepart, Employee employee){}
 
     //to set a master for the Department
     public void setMaster(Master master){this.master=master;}

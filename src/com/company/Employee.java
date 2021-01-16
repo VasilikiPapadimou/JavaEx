@@ -3,17 +3,7 @@ package com.company;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
-/**
- * The first Constructor is general ,
- * In order to pass the info to the Master class I need to Create the second Constructor
- * The second Constructor creates an Employee employee that also is a Master
- *
- * MonthIncomeEmp --> Calculates the monthly amount of money an employee takes
- *                    according to the degrees, number of children, the years he/she worked in
- *                    the company and if he/she is Master or not
- * I created the set accessors that were asked
- * toString --> to visualise the outcome of this class in Main
- **/
+
 public class Employee {
     private String[] degrees = new String[]{"defterobathmia","panepistimiaki","metaptixiako","didaktoriko"};
     private String fullName;
@@ -33,7 +23,7 @@ public class Employee {
         this.domain= domain;
         this.degree= degree;
     }
-
+    //Creates Master Employee because every Master Is-AN Employee
     public Employee(Employee employee){
         fullName=employee.fullName;
         birthDate=employee.birthDate;
@@ -43,6 +33,8 @@ public class Employee {
         domain=employee.domain;
         degree=employee.degree;
     }
+
+    //Calculates the monthly amount of money an employee takes
     public int MonthIncomeEmp(){
         int price=750;
         if(noChild<=3)
