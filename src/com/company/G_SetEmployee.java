@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class G_SetEmployee extends JPanel {
     public  G_SetEmployee() {
         super(new GridLayout(3, 2));

@@ -53,7 +53,7 @@ public class G_SetEmpToJob extends JPanel {
             }});
 
         save.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) { // orismos master kai department se employees
+            public void actionPerformed(ActionEvent e) {
                 String s = (String)JOptionPane.showInputDialog(
                         frame,
                         "Συμπληρώστε ημερομηνία έναρξης και λήξης ανάθεσης με μορφή yyyy/MM/dd yyyy/MM/dd",

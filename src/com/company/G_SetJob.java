@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+/** I use info from cl;asses Job and Department. */
 public class G_SetJob extends JPanel {
     public  G_SetJob() {
         super(new GridLayout(3, 2));

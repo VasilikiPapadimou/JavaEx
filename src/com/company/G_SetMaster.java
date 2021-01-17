@@ -8,10 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
  * I use this class to describe the behaviour of the panel "Ανάθεση Διευθυντή σε Έργο"
- * I don't forget that I have 3 Arraylists in Main class. Here I'll need only employees and department.
- * This way I will have
- * all the employees converted to an array. Finally I can pass them to an Object
- * of JPanel -> JComboBox
+ * Here I'll need only employees and department.
+ * This way I will have all the employees converted to an array.
+ * Finally I can pass them to an Object of JPanel -> JComboBox
  * I use a 'save' button to save all the info of
  * */
 public class G_SetMaster extends JPanel {
@@ -32,14 +31,13 @@ public class G_SetMaster extends JPanel {
         this.add(save);
 
         save.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) { // orismos master kai department se employees
+            public void actionPerformed(ActionEvent e) {
                 Employee emp = (Employee) cb.getSelectedItem();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                 Date date = new Date();
                 Master m = new Master(emp,date);
                 Department dep = (Department) cb2.getSelectedItem();
                 dep.setMaster(m);
-
             }});
 
 
