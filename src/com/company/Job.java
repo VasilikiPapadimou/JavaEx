@@ -5,19 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 /**
- * I need a HashMap to pass the Employees and the Dates to correlate them with Jobs
- * HashMap<Employee, Date[]> --> (Key) employees' start and end (Value) date of a job
- * The 2nd constructor is used to get only the jobName and the description. Every job HAS employees,
- * that's why i need also the HashMap jobEmp in this Constructor
+ * HashMap<Employee, Date[]> --> (Key) employee's start and end (Value) date of a job
  *
- * isEmployed --> to check for every Employee e if it matches the keySet of jobEmp object ==> Employed
  * JobExpenses --> calculates the budget that's available from the company to pay for a job
  *                 To calculate it we need the MonthIncomeEmp from Employee class and the months
  *                 the employee works on it
- * PureIncome--> Calculation of Pure income according to the instructions
  * NewWorker --> to update/add info to HashMap jobEmp
- * I created the needed accessors set/get
- * toString --> to visualise the outcome of this class
+ * toString --> to visualize the jobName property of this class
  **/
 public class Job implements Serializable {
     private String jobName;
@@ -45,6 +39,7 @@ public class Job implements Serializable {
         jobEmp= new HashMap<Employee,Date[]>();
     }
 
+    // to check for every Employee e if it matches the keySet of jobEmp object
     public boolean isEmployed(Employee employee){
         for( Employee e: jobEmp.keySet()){
             if(employee==e)
@@ -53,7 +48,7 @@ public class Job implements Serializable {
            return false;
     }
 
-    //in order to take only the month
+    //to take only the month
     public SimpleDateFormat getFormatter() {
         return formatter;
     }
@@ -71,20 +66,15 @@ public class Job implements Serializable {
         return budget;
     }
 
+    //Calculation of Pure income
     public double PureIncome(){ return  income-outcome-funcOut-JobExpenses(); }
 
     public void NewWorker(Employee emp ,Date[] dates){
         jobEmp.put(emp,dates);
     }
 
-
-    public String getJobName() {
-        return jobName;
-    }
-    public String getDescription() {
-        return description;
-    }
-
+    public String getJobName() { return jobName; }
+    public String getDescription() { return description; }
     public HashMap<Employee, Date[]> getJobEmp() { return jobEmp; }
 
     @Override

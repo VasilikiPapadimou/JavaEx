@@ -9,29 +9,26 @@ import java.util.HashSet;
  * Every Employee that is Master is assigned ONLY in 1 Department
  * Every Department can have more than 1 Jobs
  *
- * Arraylist<Employee> getEmployees --> returns the employees from the Arraylist
+ * ArrayList<Employee> ReturnAllEmployees()--> Returns all employees Arraylist typed
  * PaymentExpences() --> counts the amount of money payed FOR EACH Employee employee that is in the ArrayList
  *                       and adds the exact amount accounted for the Masters
- * MaxPureIncome --> counts the job that gives the Max incoming money to the company
- * setMaster --> Sets a master from Master class as the Department master
- * toString --> to visualise the outcome of this class
+ * toString --> to visualize the outcome of this class
  **/
 public class Department implements Serializable {
     private Master master;
     private ArrayList<Employee> employees;
-    private ArrayList<Job> job; // anathesi ypaliloy poy anhkei se tmhma ths etereias se sygekrimeno ergo
+    private ArrayList<Job> job;
     private String depName;
     private String description;
 
     public Department(Master master, String depName, String description) {
         this.master = master;
-        //this.employees = employees;
         this.depName = depName;
         this.description = description;
         job = new ArrayList<Job>();
         employees = new ArrayList<Employee>();
     }
-    //used in G_NewDepartment,
+
     public Department(String depName, String description) {
         this.depName = depName;
         this.description = description;
@@ -39,6 +36,7 @@ public class Department implements Serializable {
         employees = new ArrayList<Employee>();
     }
 
+    //Returns all employees Arraylist typed
     public ArrayList<Employee> ReturnAllEmployees(){
         ArrayList<Employee> allEmployee = this.employees;
         if(master!=null){
@@ -68,33 +66,24 @@ public class Department implements Serializable {
     }
 
     public void setMaster(Master master){this.master=master;}
-    public void setEmployees(Employee e){
-        employees.add(e);
-    } // add-> used for lists
-    public void SetJob(Job j)
-    {
-        this.job.add(j);
-    }
-    public Master getMaster() {
-        return master;
-    }
+    public void setEmployees(Employee e){ employees.add(e); } // add-> used for lists
+    public void SetJob(Job j) { this.job.add(j); }
+    public Master getMaster() { return master; }
 
+    //To pass all employees to the end of an Arraylist (done via a HashSet)
     public ArrayList<Employee> getEmployees() {
         ArrayList<Employee> temp =this.employees;
         HashSet hs = new HashSet();
         hs.addAll(temp);
         temp.clear();
         temp.addAll(hs);
-    return temp;}
-
-    public ArrayList<Job> getJob() {
-        return job;
+        return temp;
     }
 
+    public ArrayList<Job> getJob() { return job; }
     public String getDepName() {
         return depName;
     }
-
     public String getDescription() {
         return description;
     }

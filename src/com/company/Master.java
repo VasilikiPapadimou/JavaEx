@@ -5,7 +5,7 @@ import java.util.Date;
  * Inherits all the Employee properties
  * I created a second Master Constructor to transfer
  * the position of Master to another Employee (2nd Constructor of class Employee)
- * toString --> to visualise the outcome of this class
+ * toString --> to visualize the outcome of this class
  **/
 public class Master extends Employee {
    private Date  startTime;
@@ -24,6 +24,5 @@ public class Master extends Employee {
       return "Master{" +
               "startTime=" + startTime +
               '}';
-
    }
 }

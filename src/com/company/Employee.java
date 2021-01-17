@@ -1,20 +1,18 @@
 package com.company;
 
+
 import java.io.Serializable;
-import java.lang.annotation.Native;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Objects;
-
 /**
- *
  * MonthIncomeEmp --> Calculates the monthly amount of money an employee takes
  *                    according to the degrees, number of children, the years he/she worked in
  *                    the company and if he/she is Master or not
- * I created the set accessors that were asked
- * toString --> to visualise the fullName property of this class
+ * toString --> to visualize the fullName property of this class
  **/
+
 public class Employee implements Serializable {
     private String[] degrees = new String[]{"defterobathmia","panepistimiaki","metaptixiako","didaktoriko"};
     private String fullName;
@@ -46,6 +44,7 @@ public class Employee implements Serializable {
         degree=employee.degree;
     }
 
+    //Calculates the monthly amount of money an employee takes
     public int MonthIncomeEmp(){
         int price=750;
         if(noChild<=3)
@@ -58,9 +57,9 @@ public class Employee implements Serializable {
         int threeyears= Integer.parseInt(formatter.format(date))/yearHire;
         price+=threeyears*40;
         if(this instanceof Master){ price+=400; }
-        for(Job j :  Main.jobs){
-            for(Employee emp : j.getJobEmp().keySet()){
-                if(emp.equals(this)){
+        for(Job j :  Main.jobs){                // for each Job j that exists also in Main class Arraylist <Job>
+            for(Employee emp : j.getJobEmp().keySet()){     //for every emp in HashMap getJobEmp()
+                if(emp.equals(this)){           //the class employee equals emp from the HashMap
                     price+=100;
                 }
             }
@@ -68,35 +67,17 @@ public class Employee implements Serializable {
         return price;
     }
 
-    public String[] getDegrees() {
-        return degrees;
-    }
-    public String getFullName() {
-        return fullName;
-    }
-    public Date getBirthDate() {
-        return birthDate;
-    }
-    public Boolean getMarried() {
-        return isMarried;
-    }
-    public int getNoChild() {
-        return noChild;
-    }
-    public int getYearHire() {
-        return yearHire;
-    }
-    public String getDomain() {
-        return domain;
-    }
-    public String getDegree() {
-        return degree;
-    }
+    public String[] getDegrees() { return degrees;}
+    public String getFullName() { return fullName;}
+    public Date getBirthDate() { return birthDate;}
+    public Boolean getMarried() {return isMarried;}
+    public int getNoChild() { return noChild;}
+    public int getYearHire() { return yearHire;}
+    public String getDomain() { return domain;}
+    public String getDegree() { return degree;}
 
     @Override
-    public String toString() {
-        return  fullName ;
-    }
+    public String toString() {return  fullName ;}
 
     @Override
     public boolean equals(Object o) {
@@ -106,8 +87,7 @@ public class Employee implements Serializable {
         return noChild == employee.noChild && yearHire == employee.yearHire && Arrays.equals(degrees, employee.degrees) && Objects.equals(fullName, employee.fullName) && Objects.equals(birthDate, employee.birthDate) && Objects.equals(isMarried, employee.isMarried) && Objects.equals(domain, employee.domain) && Objects.equals(degree, employee.degree);
     }
 
-    @Override
-    public int hashCode() {
-        return 0;
-    }
 }
+
+
+
