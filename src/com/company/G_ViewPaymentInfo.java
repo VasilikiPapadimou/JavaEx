@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
- * Similarly coding method with G_ViewJobs, G_ViewEmployees and G_ViewJobs
- *
  * For the Payment Info I'll get info from Employees class and Department class (Name , department name )
  * I will also need the Department method -> PaymentExpenses.
  * */
@@ -17,7 +15,7 @@ public class G_ViewPaymentInfo extends JPanel {
         String [] columnnames ={"Όνομα Εργαζομένου","Όνομα Τμήματος", "Μισθοδοσία"};
         DefaultTableModel model = new DefaultTableModel (columnnames,0);
         Object rowData[] = new Object[3]; //creation of 3 columns
-        //Info from Employees class
+        //Info from Department and Employees class
         for (Department dep : Main.departments){
             ArrayList<Employee> temp =dep.ReturnAllEmployees();
             HashSet hs = new HashSet();

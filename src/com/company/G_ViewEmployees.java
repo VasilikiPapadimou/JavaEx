@@ -3,7 +3,7 @@ package com.company;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 /**
- * Similarly coding method with G_ViewJobs, G_ViewEmployees and G_ViewPaymentInfo
+ * Similarly coding method with G_ViewEmployees and G_ViewPaymentInfo
  * There is a need to fill a table with rows and columns with info
  **/
 public class G_ViewEmployees extends JPanel {
@@ -23,8 +23,8 @@ public class G_ViewEmployees extends JPanel {
             rowData[6]= e.getDegree();
             model.addRow(rowData);
             }
-    JTable table = new JTable(model);
-        table.setBounds(100,60,200,300);
+        JTable table = new JTable(model);
+        table.setBounds(120,60,200,300);
         JScrollPane sp=new JScrollPane(table);
 
         this.add(sp);

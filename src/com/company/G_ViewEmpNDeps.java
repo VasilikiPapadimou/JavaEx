@@ -30,7 +30,7 @@ public class G_ViewEmpNDeps extends JPanel {
                 textJob.setText("");
                 //For each employee of the department (Arraylist<Employee> getEmployees())
                 for (Employee em : d.getEmployees()){
-                    //Passes the result at the end of the file as String
+                    //Passes the result at the end of the document as String
                     textJob.append(em.toString());
                     textJob.append("\n");
                 }
