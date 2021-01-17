@@ -7,7 +7,12 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * For save button I need to cast date with the correct format
+ * all int to Integer, all Strings to Texts and cb of Strings to the SelectedItem
+ *
+ * Button "save" --> info is added to Main.Arraylist<Employee> Employees.
+ * */
 
 public class G_NewEmployee extends JPanel {
     public G_NewEmployee() {

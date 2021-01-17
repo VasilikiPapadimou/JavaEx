@@ -4,7 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ *Info added as double is casted to Double
+ * Button "save" --> info is added to Main.Arraylist<Job> jobs.
+ * */
 public class G_NewJob extends JPanel {
     public G_NewJob() {
         super(new GridLayout(6, 2));

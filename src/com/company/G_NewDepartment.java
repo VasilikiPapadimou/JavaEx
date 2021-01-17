@@ -8,8 +8,7 @@ import java.awt.event.ActionListener;
  *  To add a department I only need the name (deptName) and a description--> (2nd Department.class Constructor)
  *  So I create the panel with the boxes and labels.
  *
- *  Button "save" --> Goes to Department.class and adds the info given to the . Then this info is added
- *  to Main.Arraylist<Department> departments.
+ *  Button "save" --> info is added to Main.Arraylist<Department> departments.
  *  This way it's easier for as to pass the info to a file later.
  **/
 public class G_NewDepartment extends JPanel {
