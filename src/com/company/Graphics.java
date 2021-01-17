@@ -202,7 +202,7 @@ public class Graphics extends JPanel {
 
     private void SetMasterViewPage() {
         JFrame masterFrame = new JFrame("Ανάθεση διευθυντή σε τμήμα");
-        masterFrame.setPreferredSize(new Dimension(300, 200));
+        masterFrame.setPreferredSize(new Dimension(350, 200));
 
         masterFrame.add(new G_SetMaster(), BorderLayout.CENTER);
         masterFrame.pack();
@@ -210,7 +210,7 @@ public class Graphics extends JPanel {
     }
     private void SetJobViewPage() {
         JFrame jobFrame = new JFrame("Ανάθεση έργου σε τμήμα");
-        jobFrame.setPreferredSize(new Dimension(300, 200));
+        jobFrame.setPreferredSize(new Dimension(350, 200));
 
         jobFrame.add(new G_SetJob(), BorderLayout.CENTER);
         jobFrame.pack();
