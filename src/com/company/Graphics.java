@@ -43,7 +43,6 @@ public class Graphics extends JPanel {
 
         //The following line enables to use scrolling tabs.
         tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-
         //Add the tabbed pane to this panel.
         add(tabbedPane);
     }
