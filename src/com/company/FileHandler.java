@@ -55,7 +55,9 @@ public class FileHandler {
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
-        finally {return deps;}
+        finally {
+            fis.close();
+            return deps;}
 
 
     }
@@ -77,7 +79,8 @@ public class FileHandler {
             e.printStackTrace();
         }
         finally {
-          return employees;
+            fisemp.close();
+            return employees;
         }
 
     }
@@ -99,6 +102,7 @@ public class FileHandler {
             e.printStackTrace();
         }
         finally {
+            fisjob.close();
             return jobs;
         }
 

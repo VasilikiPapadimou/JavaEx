@@ -16,12 +16,17 @@ public class G_ViewJobs extends JPanel {
         for(Job j : Main.jobs){
                 rowData[0]= j.getJobName();
                 rowData[1]= j.getDescription();
-            for(Department d : Main.departments)
-                try{
-                rowData[2] = d.getDepName();
-                }catch(Exception e){
-                    rowData[2]="";
+                rowData[2]= "";
+            for(Department d : Main.departments){
+                for(Job j2 : d.getJob())
+                {
+                    if (j2.getJobName().equals(j.getJobName()))
+                    {
+                        rowData[2] =d.getDepName();
+                    }
+
                 }
+            }
             model.addRow(rowData);
         }
         JTable table = new JTable(model);
